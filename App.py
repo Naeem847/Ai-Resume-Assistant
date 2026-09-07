@@ -107,5 +107,7 @@ if st.button("Run ATS Analysis", type="primary"):
                     )
                     st.success("Analysis Complete!")
                     st.markdown(result)
+                    
                 except Exception as ex:
+
                     st.error(f"Failed to communicate with Gemini API: {ex}")
