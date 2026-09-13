@@ -83,10 +83,12 @@ with st.sidebar:
     st.caption("Engine: `gemini-2.5-flash` via `google-genai` SDK")
 
 # Main Input Section
+
 uploaded_file = st.file_uploader("Upload Resume (PDF format)", type=["pdf"])
 job_description = st.text_area("Job Description (Optional, but recommended for specific matching)", height=150)
 
 # Execution Action
+
 if st.button("Run ATS Analysis", type="primary"):
     if not api_key_input:
         st.error("Please enter a valid Gemini API key in the sidebar or configure it in secrets.")
@@ -105,6 +107,7 @@ if st.button("Run ATS Analysis", type="primary"):
                         resume_text=extracted_resume_text,
                         job_description=job_description
                     )
+
                     st.success("Analysis Complete!")
                     st.markdown(result)
                     
